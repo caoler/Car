@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="car@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="car">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="book"/>
+    <schema id="4" parent="1" name="hibernate"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="jfinal"/>
+    <schema id="7" parent="1" name="jfinal_demo"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="spring4"/>
+    <schema id="11" parent="1" name="springbook"/>
+    <schema id="12" parent="1" name="spring_hibernate"/>
+    <schema id="13" parent="1" name="student"/>
+    <schema id="14" parent="1" name="sys"/>
+    <schema id="15" parent="1" name="test"/>
+    <schema id="16" parent="1" name="world"/>
+    <table id="17" parent="2" name="t_admin"/>
+    <table id="18" parent="2" name="t_car"/>
+    <table id="19" parent="2" name="t_ticket"/>
+    <table id="20" parent="2" name="t_wiring"/>
+    <column id="21" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="17" name="start">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="23" parent="17" name="class">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="24" parent="17" name="price">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="25" parent="17" name="class">
+      <ColNames>class</ColNames>
+    </index>
+    <index id="26" parent="17" name="price">
+      <ColNames>price</ColNames>
+    </index>
+    <index id="27" parent="17" name="start">
+      <ColNames>start</ColNames>
+    </index>
+    <key id="28" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="29" parent="17" name="t_admin_ibfk_1">
+      <ColNames>start</ColNames>
+      <RefSchemaName>car</RefSchemaName>
+      <RefTableName>t_wiring</RefTableName>
+      <RefColNames>start</RefColNames>
+    </foreign-key>
+    <foreign-key id="30" parent="17" name="t_admin_ibfk_2">
+      <ColNames>class</ColNames>
+      <RefSchemaName>car</RefSchemaName>
+      <RefTableName>t_car</RefTableName>
+      <RefColNames>class</RefColNames>
+    </foreign-key>
+    <foreign-key id="31" parent="17" name="t_admin_ibfk_3">
+      <ColNames>price</ColNames>
+      <RefSchemaName>car</RefSchemaName>
+      <RefTableName>t_ticket</RefTableName>
+      <RefColNames>price</RefColNames>
+    </foreign-key>
+    <column id="32" parent="18" name="class">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="18" name="price">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="34" parent="18" name="max">
+      <Position>3</Position>
+      <DataType>int(20)|0</DataType>
+    </column>
+    <index id="35" parent="18" name="price">
+      <ColNames>price</ColNames>
+    </index>
+    <key id="36" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>class</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="18" name="t_car_ibfk_1">
+      <ColNames>price</ColNames>
+      <RefSchemaName>car</RefSchemaName>
+      <RefTableName>t_ticket</RefTableName>
+      <RefColNames>price</RefColNames>
+    </foreign-key>
+    <column id="38" parent="19" name="price">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="19" name="total">
+      <Position>2</Position>
+      <DataType>int(20)|0</DataType>
+    </column>
+    <column id="40" parent="19" name="sold">
+      <Position>3</Position>
+      <DataType>int(20)|0</DataType>
+    </column>
+    <column id="41" parent="19" name="last">
+      <Position>4</Position>
+      <DataType>int(20)|0</DataType>
+    </column>
+    <key id="42" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>price</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="43" parent="20" name="start">
+      <Position>1</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="20" name="destination">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="45" parent="20" name="time">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="46" parent="20" name="stime">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="47" parent="20" name="class">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="48" parent="20" name="class">
+      <ColNames>class</ColNames>
+    </index>
+    <index id="49" parent="20" name="start">
+      <ColNames>start</ColNames>
+    </index>
+    <key id="50" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>start</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="51" parent="20" name="t_wiring_ibfk_1">
+      <ColNames>class</ColNames>
+      <RefSchemaName>car</RefSchemaName>
+      <RefTableName>t_car</RefTableName>
+      <RefColNames>class</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
